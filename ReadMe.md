@@ -52,6 +52,11 @@ Là phương thức của document object dùng để tạo ra DOM element.
 
 # Bài 9 Cách thêm React vào Website
 
+```html
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+```
+
 # Bài 10 React.createElement()
 1. React.createElement() -> React element.
 2. So sánh với document.createElement() -> DOM element.
@@ -172,4 +177,6 @@ Tạo:
 // render(element, container, callback)
 ReactDOM.render(divReact, root)
 ```
+# Bài 12 JSX là gì? Tại sao cần JSX?
+
 
