@@ -5,7 +5,7 @@
   3. console.dir()
   4. innerText, id, className, style
 
-```
+```html
 <body>
 
   <div id="root"></div>
