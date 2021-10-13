@@ -6,36 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
 </head>
 
-<!-- Bai 8: document.createElement() de lam gi
-
-    1. document.createElement()
-    2. document.body.appendChild()
-    3. console.dir()
-    4. innerText, id, className, style
--->
-
 <body>
-
   <div id="root"></div>
+  <!-- <div class="post-item">
+    <h2 title="Học React tại F8">Học ReactJS</h2>
+    <p>Học ReactJS từ cơ bản đến nâng cao.</p>
+  </div> -->
 
   <script>
-    const root = document.getElementById('root');
-    const h1 = document.createElement('h1');
+    // DOM
+    const root = document.getElementById('root')
+    const divDom = document.createElement('div')
+    divDom.className = 'post-item'
 
-    h1.innerHTML = "Bai 8";
+    const h2Dom = document.createElement('h2')
+    h2Dom.title = 'Học React tại F8'
+    h2Dom.innerText = 'Học ReactJS'
 
-    h1.id = 'heading';
+    const pDom = document.createElement('p')
+    pDom.innerText = 'Học ReactJS từ cơ bản đến nâng cao.'
 
-    h1.className = 'heading';
+    divDom.appendChild(h2Dom)
+    divDom.appendChild(pDom)
+    root.appendChild(divDom)
 
-    h1.style.color = 'red';
-    h1.style = 'color: green; font-size: 5rem;'
+    // React
+    const divReact = React.createElement(
+      'div',
+      {
+        className: 'post-item'
+      },
+      React.createElement('h2', { title: 'Học React tại F8' }, 'Học ReactJS'),
+      React.createElement('p', null, 'Học ReactJS từ cơ bản đến nâng cao.')
+    )
+    console.log(divReact)
 
-    root.appendChild(h1);
-
-    console.log(h1);
   </script>
 </body>
 
