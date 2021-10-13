@@ -16,7 +16,7 @@ React.js là một mã nguồn mở được phát triền bởi Facebook vào n
 ### Sự khác biệt
 
 
-# Bai 8: document.createElement() de lam gi
+# Bài 8: document.createElement()
 
 Là phương thức của document object dùng để tạo ra DOM element.
 
@@ -159,3 +159,17 @@ Tạo:
 
   </script>
 ```
+
+# Bài 11 React-DOM là gì? Tại sao cần React-DOM?
+
+- React-DOM: là thư viện cầu nối giữa React và DOM.
+- Tạo sao phải sử dụng React-DOM: render react element ra giao diện người dùng.
+- Tại sao lại tách React-DOM ra: để phân biệt (React-DOM, React-Native) là những cầu nối từ react ==> Không thuộc thư viện React.
+- RenderUI.
+
+```js
+// React-DOM --> renderUI
+// render(element, container, callback)
+ReactDOM.render(divReact, root)
+```
+

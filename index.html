@@ -7,31 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 </head>
 
 <body>
   <div id="root"></div>
-  <!-- <div class="post-item">
-    <h2 title="Học React tại F8">Học ReactJS</h2>
-    <p>Học ReactJS từ cơ bản đến nâng cao.</p>
-  </div> -->
 
   <script>
     // DOM
     const root = document.getElementById('root')
-    const divDom = document.createElement('div')
-    divDom.className = 'post-item'
+    // const divDom = document.createElement('div')
+    // divDom.className = 'post-item'
 
-    const h2Dom = document.createElement('h2')
-    h2Dom.title = 'Học React tại F8'
-    h2Dom.innerText = 'Học ReactJS'
+    // const h2Dom = document.createElement('h2')
+    // h2Dom.title = 'Học React tại F8'
+    // h2Dom.innerText = 'Học ReactJS'
 
-    const pDom = document.createElement('p')
-    pDom.innerText = 'Học ReactJS từ cơ bản đến nâng cao.'
+    // const pDom = document.createElement('p')
+    // pDom.innerText = 'Học ReactJS từ cơ bản đến nâng cao.'
 
-    divDom.appendChild(h2Dom)
-    divDom.appendChild(pDom)
-    root.appendChild(divDom)
+    // divDom.appendChild(h2Dom)
+    // divDom.appendChild(pDom)
+    // root.appendChild(divDom)
 
     // React
     const divReact = React.createElement(
@@ -43,6 +40,10 @@
       React.createElement('p', null, 'Học ReactJS từ cơ bản đến nâng cao.')
     )
     console.log(divReact)
+
+    // React-DOM --> renderUI
+    // render(element, container, callback)
+    ReactDOM.render(divReact, root)
 
   </script>
 </body>
