@@ -179,4 +179,109 @@ ReactDOM.render(divReact, root)
 ```
 # Bài 12 JSX là gì? Tại sao cần JSX?
 
+JSX --> Javascript XML
+
+1. Luôn dùng React.createElement()? Vấn đề
+2. JSX?
+3. JSX không phải là HTML, cần có JS, Babel để dùng JSX
+4. JSX và React-Dom
+
+JSX để hỗ trợ viết html, xml trong file js.
+
+Babel là thư viện JS chuyên dùng để phân tích và chuyển đổi cú pháp của JS > ES6 để trở thành ES5. Dùng để hổ trợ hầu hết các trình duyệt chạy JS.
+
+```html
+<script type="text/babel">
+    // DOM
+    const root = document.getElementById('root')
+
+    const courses = [
+      {
+        name: 'HTML/CSS'
+      },
+      {
+        name: 'Responsive web design'
+      },
+      {
+        name: 'ReactJS'
+      }
+    ]
+
+
+    // React
+    const ul = <ul>
+      {
+        courses.map((course, index) => (
+          <li key={index}>{course.name}</li>
+        ))
+      }
+    </ul>
+
+    // React-DOM --> renderUI
+    // render(element, container, callback)
+    ReactDOM.render(ul, root)
+
+  </script>
+```
+
+# Bài 13 JSX render arrays
+
+- Tại sao khi code thuần dùng map phải join() ==> chuyển đổi mảng thành chuổi để cho property innerHTML có thể nhận giá trị.
+- Gặp lỗi khi render từ mảng {props "key"}
+- Không render được 2 element cùng lúc ==> cần có thẻ ôm bên ngoài (div, React.Fragment)
+
+# Bài 14 React element types
+
+1. React element types: string, function/class
+  - Wrapper
+    - Header -> Header component
+    - Content -> Content component
+    - Footer -> Footer component
+2. Biểu diễn đơn giản với JSX.
+
+``` html
+<script type="text/babel">
+    const root = document.getElementById('root')
+
+    function Header() {
+      return (
+        <div class="header">Header</div>
+      )
+    }
+
+    class Content extends React.Component {
+      render() {
+        return (
+          <div class="content">Content</div>
+        )
+      }
+    }
+
+    function PostItem() {
+      return (
+        <div class="post-item">
+          <img src="https://cdn.fullstack.edu.vn/f8-learning/blog_posts/923/6169a3eaa8c07.png" alt="" />
+          <h2 class="post-title">Life cycle của Component trong Reactjs</h2>
+          <p class="post-desc">Chào anh Sơn và...</p>
+          <p class="post-published">2 ngày trước * 3 phút đọc</p>
+        </div>
+      )
+    }
+
+    const app = (
+      <div class="wrapper">
+        <Header />
+        <PostItem />
+        <div class="footer">Footer</div>
+      </div>
+    )
+
+    ReactDOM.render(app, root)
+  </script>
+  ```
+
+  React element dùng làm function component có type là gì? ==> Function.
+
+# Bài 15 Props là gì? Dùng props khi nào?
+
 
